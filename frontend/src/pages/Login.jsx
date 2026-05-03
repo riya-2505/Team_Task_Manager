@@ -1,6 +1,7 @@
 import { useState } from "react";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -21,25 +22,30 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+     <div>
+    <h2>Login</h2>
 
-      <input
-        placeholder="Email"
-        onChange={(e) =>
-          setForm({ ...form, email: e.target.value })
-        }
-      />
+    <input
+      placeholder="Email"
+      onChange={(e) =>
+        setForm({ ...form, email: e.target.value })
+      }
+    />
 
-      <input
-        placeholder="Password"
-        type="password"
-        onChange={(e) =>
-          setForm({ ...form, password: e.target.value })
-        }
-      />
+    <input
+      placeholder="Password"
+      type="password"
+      onChange={(e) =>
+        setForm({ ...form, password: e.target.value })
+      }
+    />
 
-      <button onClick={handleLogin}>Login</button>
-    </div>
+    <button onClick={handleLogin}>Login</button>
+
+    <p>
+      Don't have an account?{" "}
+      <Link to="/signup">Signup</Link>
+    </p>
+  </div>
   );
 }

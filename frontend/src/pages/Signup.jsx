@@ -1,6 +1,7 @@
 import { useState } from "react";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const [form, setForm] = useState({
@@ -30,4 +31,8 @@ export default function Signup() {
       <button onClick={handleSignup}>Signup</button>
     </div>
   );
+ <p>
+  Already have an account?{" "}
+  <Link to="/">Login</Link>
+ </p>
 }
